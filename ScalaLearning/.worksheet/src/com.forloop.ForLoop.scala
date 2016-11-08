@@ -32,4 +32,8 @@ object ForLoop {;import org.scalaide.worksheet.runtime.library.WorksheetSupport.
 	li.drop(2).take(3);System.out.println("""res8: List[Int] = """ + $show(res$8));$skip(34); 
 	
 	li.foreach { x => println(x) }}
+                                                  
+                                                
+                                                  
+                                                  
 }
