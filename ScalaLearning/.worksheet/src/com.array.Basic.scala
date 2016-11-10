@@ -50,8 +50,29 @@ object Basic {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._;
 
   };System.out.println("""res4: Seq[String] = """ + $show(res$4));$skip(279); 
 
-  val cal = new Calculator("HP");System.out.println("""cal  : com.array.Basic.Calculator = """ + $show(cal ));$skip(11); val res$5 = 
-	cal.color;System.out.println("""res5: String = """ + $show(res$5));$skip(16); val res$6 = 
-	
-	cal.add(2,6);System.out.println("""res6: Int = """ + $show(res$6))}
+  val cal = new Calculator("HP");System.out.println("""cal  : com.array.Basic.Calculator = """ + $show(cal ));$skip(12); val res$5 = 
+  cal.color;System.out.println("""res5: String = """ + $show(res$5));$skip(18); val res$6 = 
+
+  cal.add(2, 6)
+
+
+  //Function and Method
+
+  class C {
+    var acc = 0
+    def minc = { acc + 1 }
+    val finc = { () => acc += 1 }
+
+  };System.out.println("""res6: Int = """ + $show(res$6));$skip(142); 
+
+  val c = new C;System.out.println("""c  : com.array.Basic.C = """ + $show(c ));$skip(11); val res$7 = 
+
+  c.minc;System.out.println("""res7: Int = """ + $show(res$7));$skip(11); val res$8 = 
+
+  c.finc;System.out.println("""res8: () => Unit = """ + $show(res$8))}
+
+
+ 
+ 
+
 }

@@ -52,7 +52,28 @@ object Basic {
 
   val cal = new Calculator("HP")                  //> cal  : com.array.Basic.Calculator = com.array.Basic$$anonfun$main$1$Calculat
                                                   //| or$1@67b6d4ae
-	cal.color                                 //> res5: String = black
-	
-	cal.add(2,6)                              //> res6: Int = 8
+  cal.color                                       //> res5: String = black
+
+  cal.add(2, 6)                                   //> res6: Int = 8
+
+
+  //Function and Method
+
+  class C {
+    var acc = 0
+    def minc = { acc + 1 }
+    val finc = { () => acc += 1 }
+
+  }
+
+  val c = new C                                   //> c  : com.array.Basic.C = com.array.Basic$$anonfun$main$1$C$1@34b7bfc0
+
+  c.minc                                          //> res7: Int = 1
+
+  c.finc                                          //> res8: () => Unit = <function0>
+
+
+ 
+ 
+
 }

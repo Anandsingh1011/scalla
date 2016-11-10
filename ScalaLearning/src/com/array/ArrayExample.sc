@@ -14,5 +14,4 @@ object ArrayExample {
                                                   //| na)
   fruits += "Orange"                              //> res2: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(Apple, Bana
                                                   //| na, Orange)
-
 }

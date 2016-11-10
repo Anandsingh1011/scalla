@@ -12,5 +12,4 @@ object ArrayExample {;import org.scalaide.worksheet.runtime.library.WorksheetSup
   fruits += "Apple";System.out.println("""res0: scala.collection.mutable.ArrayBuffer[String] = """ + $show(res$0));$skip(21); val res$1 = 
   fruits += "Banana";System.out.println("""res1: scala.collection.mutable.ArrayBuffer[String] = """ + $show(res$1));$skip(21); val res$2 = 
   fruits += "Orange";System.out.println("""res2: scala.collection.mutable.ArrayBuffer[String] = """ + $show(res$2))}
-
 }
