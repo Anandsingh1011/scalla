@@ -56,7 +56,9 @@ object ForLoop {;import org.scalaide.worksheet.runtime.library.WorksheetSupport.
   val lines12 = scala.io.Source.fromFile("license.txt")("UTF-8");System.out.println("""lines12  : scala.io.BufferedSource = """ + $show(lines12 ));$skip(42); 
   for (line <- lines12) {
     print(line)
-  };$skip(62); 
+  };$skip(66); 
+ 
+ 
   for (line <- fileLines(filesHere(1))) {
     print(line)
   };$skip(115); 

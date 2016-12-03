@@ -105,6 +105,8 @@ object ForLoop {
                                                   //|  anyone acting on such Contributor's behalf. Contributions do not include a
                                                   //| dditions to the Program which: (i) are separate modules of software distrib
   }
+ 
+ 
   for (line <- fileLines(filesHere(1))) {
     print(line)                                   //> <?xml version='1.0' encoding='UTF-8'?><?artifactRepository version='1.1.0'?
                                                   //| ><repository name='Bundle pool' type='org.eclipse.equinox.p2.artifact.repos
