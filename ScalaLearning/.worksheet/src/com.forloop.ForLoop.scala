@@ -18,22 +18,72 @@ object ForLoop {;import org.scalaide.worksheet.runtime.library.WorksheetSupport.
 
   def someMethod1(aa: Array[Int]) = { for (i <- aa if i > 3) yield i };System.out.println("""someMethod1: (aa: Array[Int])Array[Int]""");$skip(19); val res$6 = 
 
-  someMethod1(a);System.out.println("""res6: Array[Int] = """ + $show(res$6));$skip(16); 
- 
-	def add = {};System.out.println("""add: => Unit""");$skip(36); 
-	
-	
-	var li = List(22,13,4,15,16,7);System.out.println("""li  : List[Int] = """ + $show(li ));$skip(32); 
-	
-	var reverseList = li.reverse;System.out.println("""reverseList  : List[Int] = """ + $show(reverseList ));$skip(24); val res$7 = 
-	
-	li.sortBy { x => x };System.out.println("""res7: List[Int] = """ + $show(res$7));$skip(22); val res$8 = 
-	
-	li.drop(2).take(3);System.out.println("""res8: List[Int] = """ + $show(res$8));$skip(34); 
-	
-	li.foreach { x => println(x) }}
-                                                  
-                                                
-                                                  
-                                                  
+  someMethod1(a);System.out.println("""res6: Array[Int] = """ + $show(res$6));$skip(17); 
+
+  def add = {};System.out.println("""add: => Unit""");$skip(40); 
+
+  var li = List(22, 13, 4, 15, 16, 7);System.out.println("""li  : List[Int] = """ + $show(li ));$skip(33); 
+
+  var reverseList = li.reverse;System.out.println("""reverseList  : List[Int] = """ + $show(reverseList ));$skip(25); val res$7 = 
+
+  li.sortBy { x => x };System.out.println("""res7: List[Int] = """ + $show(res$7));$skip(23); val res$8 = 
+
+  li.drop(2).take(3);System.out.println("""res8: List[Int] = """ + $show(res$8));$skip(35); 
+
+  li.foreach { x => println(x) };$skip(89); 
+
+  /*----------------------------*/
+  val filesHere = (new java.io.File(".")).listFiles;System.out.println("""filesHere  : Array[java.io.File] = """ + $show(filesHere ));$skip(55); 
+
+  for (i <- 1 until 4)
+    println("Iteration " + i);$skip(67); 
+
+  for (i <- 0 to filesHere.length - 1)
+    println(filesHere(i));$skip(83); 
+
+  for (
+    file <- filesHere if file.getName.endsWith(".log")
+  ) println(file);$skip(100); 
+
+  for (
+    file <- filesHere if file.isFile() if file.getName.endsWith(".log")
+  ) println(file);$skip(144); 
+
+  //////////////////////////
+
+  def fileLines(file: java.io.File) =
+    scala.io.Source.fromFile(file.toString())("UTF-8").getLines().toList;System.out.println("""fileLines: (file: java.io.File)List[String]""");$skip(65); 
+  val lines12 = scala.io.Source.fromFile("license.txt")("UTF-8");System.out.println("""lines12  : scala.io.BufferedSource = """ + $show(lines12 ));$skip(42); 
+  for (line <- lines12) {
+    print(line)
+  };$skip(62); 
+  for (line <- fileLines(filesHere(1))) {
+    print(line)
+  };$skip(115); 
+
+  def scalaFiles =
+    for {
+      file <- filesHere
+      if file.getName.endsWith(".log")
+    } yield file;System.out.println("""scalaFiles: => Array[java.io.File]""");$skip(40); 
+
+  scalaFiles.foreach { x => println };$skip(231); 
+
+  val forLineLengths =
+    for {
+      file <- filesHere
+      if file.getName.endsWith(".txt")
+      line <- fileLines(
+        file)
+      trimmed = line.trim
+      if trimmed.matches(".*Licensed.*")
+    } yield trimmed.length;System.out.println("""forLineLengths  : Array[Int] = """ + $show(forLineLengths ));$skip(199); 
+
+  def grep(pattern: String) =
+    for (
+      file <- filesHere if file.getName.endsWith(".txt");
+      line <- fileLines(file) if line.trim.matches(pattern)
+    ) println(file + ": " + line.trim);System.out.println("""grep: (pattern: String)Unit""");$skip(18); 
+
+  grep(".*gdc")}
 }
