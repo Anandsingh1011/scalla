@@ -1,0 +1,24 @@
+eclipse
+reload
+package
+reload
+assembly
+package
+exit
+reload
+eclipse
+com
+cmpile
+compile
+ls
+package
+show discoveredMainClasses
+exit
+assembly
+reload
+assembly
+exit
+assembly
+exit
+assembly
+exit
